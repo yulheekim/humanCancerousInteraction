@@ -1,0 +1,16 @@
+#calendar {
+  background-color: beige;
+  height: 100%;
+  margin-right: 1rem;
+
+}
+
+.mat-card {
+  width: 80%;
+  margin-left: 0.5rem;
+}
+
+.milestoneInfo {
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}

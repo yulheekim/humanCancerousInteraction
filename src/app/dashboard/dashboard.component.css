@@ -1,0 +1,31 @@
+#header {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  background-color: darkgrey;
+  /* height: 3rem; */
+}
+
+.mat-toolbar {
+  background-color: darkgrey;
+}
+
+#container {
+  display: flex;
+  width: 100%;
+  align-content: stretch;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+#msContainer {
+  width: 40%;
+}
+
+#calContainter {
+  width: 40%;
+}
+
+#sideContainer {
+  width: 20%;
+}

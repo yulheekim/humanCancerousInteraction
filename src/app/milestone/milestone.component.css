@@ -1,0 +1,12 @@
+.milestone-card {
+  /*width: 100%;*/
+  max-width: 80%;
+  margin-top: 1rem;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
