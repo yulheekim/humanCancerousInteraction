@@ -1,7 +1,9 @@
-<mat-toolbar id="header">Hello</mat-toolbar>
+<section class="mat-typography">
+<mat-toolbar id="header">New Year Resolution</mat-toolbar>
 <div id="container">
   <div id="msContainer">
-    <app-milestone></app-milestone>
+    <app-milestone-list></app-milestone-list>
+    <button mat-raised-button class="addMilestoneBtn" (click)="gotoMsPage()">Add Milestone</button>
   </div>
   <div id="calContainter">
     <app-calendar></app-calendar>
@@ -10,3 +12,4 @@
     <app-sideboard></app-sideboard>
   </div>
 </div>
+</section>

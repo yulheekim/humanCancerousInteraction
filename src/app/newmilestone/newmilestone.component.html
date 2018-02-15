@@ -1,0 +1,42 @@
+<section class="mat-typography">
+  <mat-toolbar id="header">Milestone Add Page</mat-toolbar>
+  <div id="container">
+  <div id="leftContainer">
+    <mat-form-field>
+      <input matInput placeholder="name of the milestone" [(ngModel)]="title">
+    </mat-form-field>
+    <p>{{title}}</p>
+    <mat-form-field>
+      <input matInput [matDatepicker]="spicker" placeholder="Start Date" [(ngModel)]="startDate">
+      <mat-datepicker-toggle matSuffix [for]="spicker"></mat-datepicker-toggle>
+      <mat-datepicker #spicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="epicker" placeholder="End Date" [(ngModel)]="endDate">
+      <mat-datepicker-toggle matSuffix [for]="epicker"></mat-datepicker-toggle>
+      <mat-datepicker #epicker></mat-datepicker>
+    </mat-form-field>
+
+  <div>
+    <h1>Days to Work on Milestone</h1>
+      <mat-checkbox value="1">Monday</mat-checkbox>
+      <mat-checkbox value="2">Tuesday</mat-checkbox>
+      <mat-checkbox value="3">Wednesday</mat-checkbox>
+      <mat-checkbox value="4">Thursday</mat-checkbox>
+      <mat-checkbox value="5">Friday</mat-checkbox>
+      <mat-checkbox value="6">Saturday</mat-checkbox>
+      <mat-checkbox value="7">Sunday</mat-checkbox>
+  </div>
+  </div>
+  <div id="rightContainer">
+    placeholder
+  </div>
+  </div>
+
+  <button mat-button (click)="saveMilestone()">
+    save
+  </button>
+  <button mat-button (click)="cancel()">
+    cancel
+  </button>
+</section>

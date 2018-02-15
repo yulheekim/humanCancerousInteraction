@@ -29,3 +29,9 @@
 #sideContainer {
   width: 20%;
 }
+
+.addMilestoneBtn {
+  margin-top: 1rem;
+  width: 90%;
+  height: 3rem;
+}
