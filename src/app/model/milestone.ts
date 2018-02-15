@@ -11,12 +11,12 @@
 
 export interface Milestone {
   name: string;
-  days: number[];
+  days: string[];
   startDate: string;
   endDate: string;
   progressValue: number;
 }
 
 export class MilestoneMaker implements Milestone {
-  constructor(public name: string, public days: number[], public startDate: string, public endDate: string, public progressValue: number) { }
+  constructor(public name: string, public days: string[], public startDate: string, public endDate: string, public progressValue: number) { }
 }

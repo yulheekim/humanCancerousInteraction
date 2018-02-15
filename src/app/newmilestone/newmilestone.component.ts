@@ -11,16 +11,49 @@ import {isDate} from 'util';
 })
 export class NewmilestoneComponent implements OnInit {
   title = '';
-  days: number[] = [];
+  mon = false;
+  tue = false;
+  wed = false;
+  thurs = false;
+  fri = false;
+  sat = false;
+  sun = false;
+  daysBool: boolean[] = [this.mon, this.tue, this.wed, this.thurs, this.fri, this.sat, this.sun];
+  days: string[] = [];
   startDate = '';
   endDate = '';
+  dayseum = {0: 'mon', 1: 'tue', 2: 'wed', 3: 'thurs', 4: 'fri', 5: 'sat', 6: 'sun'};
 
   constructor(public msStore: MilestoneStoreService,
               public router: Router) { }
 
   public ms = new MilestoneMaker( this.title, this.days, this.startDate, this.endDate, 0 );
 
+  freqCheck() {
+    this.daysBool[0] = this.mon;
+    this.daysBool[1] = this.tue;
+    this.daysBool[2] = this.wed;
+    this.daysBool[3] = this.thurs;
+    this.daysBool[4] = this.fri;
+    this.daysBool[5] = this.sat;
+    this.daysBool[6] = this.sun;
+
+    for (let i = 0; i < this.daysBool.length; i++) {
+      if (this.daysBool[i]) {
+        this.days.push(this.dayseum[i]);
+      }
+    }
+  }
+
+  // freqcheckString() {
+  //   for (let i = 0; i < this.days.length; i++) {
+  //     this.ms.days[i] = 0;
+  //   }
+  // }
+  //
+
   saveMilestone() {
+    this.freqCheck();
     // date input should not be empy
     // startdate must be prior to end date
     if (this.startDate === '' || this.endDate === '' || this.endDate < this.startDate) {

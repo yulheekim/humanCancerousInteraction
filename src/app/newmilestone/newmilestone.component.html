@@ -19,13 +19,15 @@
 
   <div>
     <h1>Days to Work on Milestone</h1>
-      <mat-checkbox value="1">Monday</mat-checkbox>
-      <mat-checkbox value="2">Tuesday</mat-checkbox>
-      <mat-checkbox value="3">Wednesday</mat-checkbox>
-      <mat-checkbox value="4">Thursday</mat-checkbox>
-      <mat-checkbox value="5">Friday</mat-checkbox>
-      <mat-checkbox value="6">Saturday</mat-checkbox>
-      <mat-checkbox value="7">Sunday</mat-checkbox>
+    <form name="weekdays">
+      <mat-checkbox value="Mon" name="monday" [(ngModel)]="mon">Monday</mat-checkbox>
+      <mat-checkbox value="Tue" name="tuesday" [(ngModel)]="tue">Tuesday</mat-checkbox>
+      <mat-checkbox value="Wed" name="wednesday" [(ngModel)]="wed">Wednesday</mat-checkbox>
+      <mat-checkbox value="Thur" name="thursday" [(ngModel)]="thurs">Thursday</mat-checkbox>
+      <mat-checkbox value="Fri" name="friday" [(ngModel)]="fri">Friday</mat-checkbox>
+      <mat-checkbox value="Sat" name="saturday" [(ngModel)]="sat">Saturday</mat-checkbox>
+      <mat-checkbox value="sun" name="sunday" [(ngModel)]="sun">Sunday</mat-checkbox>
+    </form>
   </div>
   </div>
   <div id="rightContainer">
