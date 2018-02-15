@@ -12,11 +12,14 @@
 export interface Milestone {
   name: string;
   days: string[];
+  daysBool: boolean[];
   startDate: string;
   endDate: string;
   progressValue: number;
+  shouldDo?: boolean;
 }
 
 export class MilestoneMaker implements Milestone {
-  constructor(public name: string, public days: string[], public startDate: string, public endDate: string, public progressValue: number) { }
+  constructor(public name: string, public days: string[], public daysBool: boolean[],
+              public startDate: string, public endDate: string, public progressValue: number, public shouldDo = false) { }
 }

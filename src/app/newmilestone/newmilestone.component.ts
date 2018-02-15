@@ -27,7 +27,7 @@ export class NewmilestoneComponent implements OnInit {
   constructor(public msStore: MilestoneStoreService,
               public router: Router) { }
 
-  public ms = new MilestoneMaker( this.title, this.days, this.startDate, this.endDate, 0 );
+  public ms = new MilestoneMaker( this.title, this.days, this.daysBool, this.startDate, this.endDate, 0 );
 
   freqCheck() {
     this.daysBool[0] = this.mon;
