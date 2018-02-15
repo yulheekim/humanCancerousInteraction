@@ -3,16 +3,16 @@
   <div id="container">
   <div id="leftContainer">
     <mat-form-field>
-      <input matInput placeholder="name of the milestone" [(ngModel)]="title">
+      <input matInput placeholder="name of the milestone" [(ngModel)]="title" required>
     </mat-form-field>
     <p>{{title}}</p>
     <mat-form-field>
-      <input matInput [matDatepicker]="spicker" placeholder="Start Date" [(ngModel)]="startDate">
+      <input matInput [matDatepicker]="spicker" placeholder="Start Date" [(ngModel)]="startDate" required>
       <mat-datepicker-toggle matSuffix [for]="spicker"></mat-datepicker-toggle>
       <mat-datepicker #spicker></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="epicker" placeholder="End Date" [(ngModel)]="endDate">
+      <input matInput [matDatepicker]="epicker" placeholder="End Date" [(ngModel)]="endDate" required>
       <mat-datepicker-toggle matSuffix [for]="epicker"></mat-datepicker-toggle>
       <mat-datepicker #epicker></mat-datepicker>
     </mat-form-field>

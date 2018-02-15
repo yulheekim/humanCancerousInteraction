@@ -5,8 +5,8 @@
       <div mat-card-avatar class="example-header-image"></div>
       <p>Milestone title: {{ms.name}}</p>
       <p>{{ms.days}}</p>
-      <p>start: {{ms.startDate}}</p>
-      <p>end: {{ms.endDate}}</p>
+      <p>start: {{ms.startDate | date}}</p>
+      <p>end: {{ms.endDate | date}}</p>
     </div>
     <div>
       <section class="example-section">
