@@ -1,8 +1,7 @@
 <div id="calendar">
   <!--<mat-card class="milestoneInfo">-->
-    <div class="milestoneInfo" [(ngModel)]="displayMilestoneName">
-      <p>
-        name: {{displayMilestoneName.name}}
+    <div class="milestoneInfo"  *ngIf="calendarMilestone !== null">
+      <p [innerText]="displayMilestoneName">
       </p>
       <p>
         Days since: days+

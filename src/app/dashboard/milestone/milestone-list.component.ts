@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Milestone } from '../../model/milestone';
 import { MilestoneStoreService } from '../../service/milestone-store.service';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 @Component({
   selector: 'app-milestone-list',
@@ -16,6 +17,7 @@ export class MilestoneListComponent implements OnInit {
 
   emitMilestone(ms) {
     this.msStore.calendarMilestone = ms;
+    this.msStore.getDisplayName();
     console.log(this.msStore.calendarMilestone);
   }
 
