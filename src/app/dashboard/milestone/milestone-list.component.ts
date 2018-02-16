@@ -16,7 +16,7 @@ export class MilestoneListComponent implements OnInit {
 
   emitMilestone(ms) {
     this.msStore.calendarMilestone = ms;
-    console.log(this.msStore.calendarMilestone);
+    // console.log(this.msStore.calendarMilestone);
   }
 
   ngOnInit() {

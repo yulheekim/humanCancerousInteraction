@@ -14,10 +14,18 @@ export class CalendarComponent implements OnInit {
   constructor(public msStore: MilestoneStoreService) { }
 
 
+    getColor(d) {
+      document.getElementById(d.getDate().toString()).classList.add('active');
+    }
+
   ngOnInit() {
     if (this.displayMilestoneName != null) {
       this.displayMilestoneName = this.msStore.calendarMilestone;
     }
+
+  var d = new Date();
+  this.getColor(d);
+
   }
 
 }
