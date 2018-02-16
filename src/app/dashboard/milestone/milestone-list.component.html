@@ -1,6 +1,6 @@
 <div>
   <mat-list *ngFor="let ms of msStoreList">
-  <button mat-raised-button class="milestoneBtn">
+  <button mat-raised-button class="milestoneBtn" (click)="emitMilestone(ms)">
     <div>
       <div mat-card-avatar class="example-header-image"></div>
       <p>Milestone title: {{ms.name}}</p>
@@ -16,5 +16,3 @@
   </button>
   </mat-list>
 </div>
-
-
