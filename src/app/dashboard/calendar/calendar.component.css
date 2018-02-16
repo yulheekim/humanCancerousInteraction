@@ -48,6 +48,9 @@ body {font-family: Verdana, sans-serif;}
     padding-top: 10px;
 }
 
+.year {
+  font: 18px;
+}
 .weekdays {
     margin: 0;
     padding: 10px 0;
