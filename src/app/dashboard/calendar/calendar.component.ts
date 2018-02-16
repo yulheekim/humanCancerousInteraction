@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Milestone } from '../../model/milestone';
+import { MilestoneStoreService } from '../../service/milestone-store.service';
 
 @Component({
   selector: 'app-calendar',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  milestonelist = this.msStore.milestones;
 
-  constructor() { }
+  constructor(public msStore: MilestoneStoreService) { }
 
   ngOnInit() {
   }
