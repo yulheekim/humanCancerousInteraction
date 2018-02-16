@@ -9,10 +9,15 @@ import { MilestoneStoreService } from '../../service/milestone-store.service';
 })
 export class CalendarComponent implements OnInit {
   milestonelist = this.msStore.milestones;
+  public displayMilestoneName = this.msStore.calendarMilestone;
 
   constructor(public msStore: MilestoneStoreService) { }
 
+
   ngOnInit() {
+    if (this.displayMilestoneName != null) {
+      this.displayMilestoneName = this.msStore.calendarMilestone;
+    }
   }
 
 }

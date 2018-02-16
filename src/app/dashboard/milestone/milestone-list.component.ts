@@ -14,7 +14,11 @@ export class MilestoneListComponent implements OnInit {
 
   constructor(private msStore: MilestoneStoreService) { }
 
-  ngOnInit() {
+  emitMilestone(ms) {
+    this.msStore.calendarMilestone = ms;
+    console.log(this.msStore.calendarMilestone);
   }
 
+  ngOnInit() {
+  }
 }
