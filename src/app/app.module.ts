@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonToggleModule, MatProgressBarModule, MatButtonModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatCheckboxModule, MatListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -44,6 +46,8 @@ import { MilestoneStoreService } from './service/milestone-store.service';
     MatRadioModule,
     MatCheckboxModule,
     MatListModule,
+    MatMenuModule,
+    MatIconModule,
     routes,
   ],
   providers: [MilestoneStoreService],

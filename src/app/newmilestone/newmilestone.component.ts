@@ -77,13 +77,16 @@ export class NewmilestoneComponent implements OnInit {
     
     let starting = new Date(this.startDate);
     let ending = new Date(this.endDate);
-
     
-    if ( (this.today.getTime() > starting.getTime()) && !(this.today.getDay === starting.getDay) ) {
+    if ( (this.today.getDate() == starting.getDate()) ) {}
+    else if ((this.today.getTime() > starting.getTime())) {
       alert("Can't be Goku and go back in time u putty mofo.");
       this.days=[];
       return 0;
-    }
+    } 
+
+    
+    
     if ( this.today.getTime() > ending.getTime() ) {
       alert("Can't be done before today.");
       this.days=[];
