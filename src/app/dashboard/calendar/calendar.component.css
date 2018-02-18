@@ -22,11 +22,7 @@ body {font-family: Verdana, sans-serif;}
 .month {
     padding: 70px 25px;
     width: 100%;
-<<<<<<< HEAD
-    background: Darkgrey;
-=======
     background: #777;/*#1abc9c;*/
->>>>>>> 7e530f6e5ebd34ae16628401b92611706c18426b
     text-align: center;
 }
 
@@ -83,14 +79,9 @@ body {font-family: Verdana, sans-serif;}
 
 .days li .active {
     padding: 5px;
-<<<<<<< HEAD
-    background: #1abc9c;
-    color: white !important
-=======
     background: white;
     border-radius: 50%;
     color: #777 !important
->>>>>>> 7e530f6e5ebd34ae16628401b92611706c18426b
 }
 
 /* Add media queries for smaller screens */
