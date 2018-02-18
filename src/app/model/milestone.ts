@@ -10,6 +10,7 @@
 
 
 export interface Milestone {
+  id: number;
   name: string;
   days: string[];
   daysBool: boolean[];
@@ -20,6 +21,6 @@ export interface Milestone {
 }
 
 export class MilestoneMaker implements Milestone {
-  constructor(public name: string, public days: string[], public daysBool: boolean[],
+  constructor(public id: number, public name: string, public days: string[], public daysBool: boolean[],
               public startDate: string, public endDate: string, public progressValue: number, public shouldDo = false) { }
 }
