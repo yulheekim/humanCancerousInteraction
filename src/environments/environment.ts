@@ -7,11 +7,11 @@ export const environment = {
   production: false,
 
   firebase: {
-    apiKey: 'AIzaSyBF556Kwf3jcZkvrZgxlT-NqIEA0vcrqX0',
-    authDomain: 'newearresolution.firebaseapp.com',
-    databaseURL: 'https://newearresolution.firebaseio.com',
-    projectId: 'newearresolution',
-    storageBucket: 'newearresolution.appspot.com',
-    messagingSenderId: '1030205366346'
+    apiKey: "AIzaSyAAjMUXLQsecELSm5JAU-fktvwZfxm19ZM",
+    authDomain: "humancancerousinteraction.firebaseapp.com",
+    databaseURL: "https://humancancerousinteraction.firebaseio.com",
+    projectId: "humancancerousinteraction",
+    storageBucket: "humancancerousinteraction.appspot.com",
+    messagingSenderId: "59134066780"
   }
 };
