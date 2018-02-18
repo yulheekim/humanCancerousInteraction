@@ -24,20 +24,22 @@ export class CalendarComponent implements OnInit, AfterContentChecked {
 
   constructor(public msStore: MilestoneStoreService) { }
 
-    getColor(d) {
-      // console.log(d.getDate().toString());
-      // console.log(typeof(d.getDate().toString()));
-      // console.log(document.getElementById(d.getDate().toString()));
-      document.getElementById(d.getDate().toString()).classList.add('active');
-    }
+  getColor(d) {
+    document.getElementById(d.getDate().toString()).classList.add('active');
+  }
+
+  complete() {
+    document.getElementById(d.getDate().toString()).style['background-color'] = "limegreen";
+  }
+
 
   ngOnInit() {
     if (this.displayMilestoneName !== null) {
       this.calendarMilestone = this.msStore.calendarMilestone;
     }
 
-  const d = new Date();
-  this.getColor(d);
+    const d = new Date();
+    this.getColor(d);
 
   }
 }
