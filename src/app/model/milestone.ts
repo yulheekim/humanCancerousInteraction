@@ -12,7 +12,7 @@
 export interface Milestone {
   name: string;
   days: string[];
-  daysBool: boolean[];
+  daysBool: boolean[]; //weekdays
   startDate: string;
   endDate: string;
   progressValue: number;

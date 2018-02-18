@@ -13,7 +13,7 @@ export class SideboardComponent implements OnInit {
   // shouldDo = false;
 
   // returns the weekday as a number
-  public today = new Date().getDay() - 1;
+  public today = new Date().getDay() - 1; //5= saturday
 
 
   constructor(public msStore: MilestoneStoreService) { }
@@ -24,6 +24,16 @@ export class SideboardComponent implements OnInit {
         this.msStoreList[i].shouldDo = true;
       }
     }
+  }
+
+
+  complete() {
+    document.getElementById("milestone_box").style['background-color'] = "limegreen";
+
+  }
+
+  incomplete() {
+    document.getElementById("milestone_box").style['background-color'] = "tomato";
   }
 
   ngOnInit() {
