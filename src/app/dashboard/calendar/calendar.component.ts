@@ -28,10 +28,6 @@ export class CalendarComponent implements OnInit, AfterContentChecked {
     document.getElementById(d.getDate().toString()).classList.add('active');
   }
 
-  complete() {
-    document.getElementById(d.getDate().toString()).style['background-color'] = "limegreen";
-  }
-
 
   ngOnInit() {
     if (this.displayMilestoneName !== null) {

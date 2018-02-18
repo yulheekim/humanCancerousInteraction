@@ -19,11 +19,11 @@ export class NewmilestoneComponent implements OnInit {
   fri = false;
   sat = false;
   sun = false;
-  daysBool: boolean[] = [this.mon, this.tue, this.wed, this.thurs, this.fri, this.sat, this.sun];
+  daysBool: boolean[] = [this.sun, this.mon, this.tue, this.wed, this.thurs, this.fri, this.sat];
   days: string[] = [];
   startDate = '';
   endDate = '';
-  dayseum = {0: 'mon', 1: 'tue', 2: 'wed', 3: 'thurs', 4: 'fri', 5: 'sat', 6: 'sun'};
+  dayseum = {0: 'sun', 1: 'mon', 2: 'tue', 3: 'wed', 4: 'thurs', 5: 'fri', 6: 'sat'};
   today = new Date();
 
   constructor(public msStore: MilestoneStoreService,
@@ -32,13 +32,13 @@ export class NewmilestoneComponent implements OnInit {
   public ms = new MilestoneMaker( this.id, this.title, this.days, this.daysBool, this.startDate, this.endDate, 0 );
 
   freqCheck() {
-    this.daysBool[0] = this.mon;
-    this.daysBool[1] = this.tue;
-    this.daysBool[2] = this.wed;
-    this.daysBool[3] = this.thurs;
-    this.daysBool[4] = this.fri;
-    this.daysBool[5] = this.sat;
-    this.daysBool[6] = this.sun;
+    this.daysBool[0] = this.sun;
+    this.daysBool[1] = this.mon;
+    this.daysBool[2] = this.tue;
+    this.daysBool[3] = this.wed;
+    this.daysBool[4] = this.thurs;
+    this.daysBool[5] = this.fri;
+    this.daysBool[6] = this.sat;
 
     for (let i = 0; i < this.daysBool.length; i++) {
       if (this.daysBool[i]) {
@@ -75,16 +75,16 @@ export class NewmilestoneComponent implements OnInit {
 
     let starting = new Date(this.startDate);
     let ending = new Date(this.endDate);
-    
+
     if ( (this.today.getDate() == starting.getDate()) ) {}
     else if ((this.today.getTime() > starting.getTime())) {
       alert("Can't be Goku and go back in time u putty mofo.");
       this.days=[];
       return 0;
-    } 
+    }
 
-    
-    
+
+
     if ( this.today.getTime() > ending.getTime() ) {
       alert("Can't be done before today.");
       this.days=[];
@@ -101,9 +101,9 @@ export class NewmilestoneComponent implements OnInit {
       this.days=[];
       return 0;
     }
-    
 
-    
+
+
 
 
     this.ms.name = this.title;

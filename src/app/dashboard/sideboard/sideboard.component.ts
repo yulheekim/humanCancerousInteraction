@@ -38,7 +38,6 @@ export class SideboardComponent implements OnInit {
 
   ngOnInit() {
     this.doChekcer();
-    console.log(this.today);
     // for (let j = 0; j < this.msStoreList.length; j++) {
     //   if (this.msStoreList[j].days.length !== 0) {
     //     for (let i = 0; i < this.msStoreList[j].daysBool.length; i++) {
