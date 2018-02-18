@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewmilestoneComponent } from './newmilestone/newmilestone.component';
+import { LoginComponent } from './login/login.component';
+import {AuthGuard} from './core/auth.guard';
 
 export const router: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'newmilestone', component: NewmilestoneComponent }
 ]
 

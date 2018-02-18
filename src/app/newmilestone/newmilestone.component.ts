@@ -24,7 +24,6 @@ export class NewmilestoneComponent implements OnInit {
   startDate = '';
   endDate = '';
   dayseum = {0: 'mon', 1: 'tue', 2: 'wed', 3: 'thurs', 4: 'fri', 5: 'sat', 6: 'sun'};
-  email = '';
   today = new Date();
 
   constructor(public msStore: MilestoneStoreService,
@@ -76,13 +75,16 @@ export class NewmilestoneComponent implements OnInit {
 
     let starting = new Date(this.startDate);
     let ending = new Date(this.endDate);
-
-
-    if ( (this.today.getTime() > starting.getTime()) && !(this.today.getDay === starting.getDay) ) {
+    
+    if ( (this.today.getDate() == starting.getDate()) ) {}
+    else if ((this.today.getTime() > starting.getTime())) {
       alert("Can't be Goku and go back in time u putty mofo.");
       this.days=[];
       return 0;
-    }
+    } 
+
+    
+    
     if ( this.today.getTime() > ending.getTime() ) {
       alert("Can't be done before today.");
       this.days=[];
@@ -99,13 +101,9 @@ export class NewmilestoneComponent implements OnInit {
       this.days=[];
       return 0;
     }
-    if (this.email === '') {
-      alert('Enter the email you\'d like to be alerted to.');
-      this.days=[];
-      return 0;
-    }
+    
 
-    console.log(this.email)
+    
 
 
     this.ms.name = this.title;
