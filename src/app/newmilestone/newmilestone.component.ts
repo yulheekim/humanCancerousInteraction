@@ -24,7 +24,6 @@ export class NewmilestoneComponent implements OnInit {
   startDate = '';
   endDate = '';
   dayseum = {0: 'mon', 1: 'tue', 2: 'wed', 3: 'thurs', 4: 'fri', 5: 'sat', 6: 'sun'};
-  email = '';
   today = new Date();
 
   constructor(public msStore: MilestoneStoreService,
@@ -102,13 +101,9 @@ export class NewmilestoneComponent implements OnInit {
       this.days=[];
       return 0;
     }
-    if (this.email === '') {
-      alert('Enter the email you\'d like to be alerted to.');
-      this.days=[];
-      return 0;
-    }
+    
 
-    console.log(this.email)
+    
 
 
     this.ms.name = this.title;

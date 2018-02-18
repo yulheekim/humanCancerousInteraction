@@ -10,7 +10,6 @@ export class MilestoneStoreService {
 
   getDisplayName() {
     this.calendarMilestoneName = this.calendarMilestone.name;
-    console.log(this.calendarMilestoneName);
     // return this.calendarMilestoneName;
   }
 
@@ -25,9 +24,6 @@ export class MilestoneStoreService {
         return;
       }
     }
-    // if (this.milestones[this.milestones.length] !== null) {
-    //   ms.id++;
-    // }
   }
 
   addmilestone(ms) {
