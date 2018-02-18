@@ -10,6 +10,7 @@ import {isDate, log} from 'util';
   styleUrls: ['./newmilestone.component.css']
 })
 export class NewmilestoneComponent implements OnInit {
+  id = 0;
   title = '';
   mon = false;
   tue = false;
@@ -23,13 +24,13 @@ export class NewmilestoneComponent implements OnInit {
   startDate = '';
   endDate = '';
   dayseum = {0: 'mon', 1: 'tue', 2: 'wed', 3: 'thurs', 4: 'fri', 5: 'sat', 6: 'sun'};
-  email = "";
+  email = '';
   today = new Date();
 
   constructor(public msStore: MilestoneStoreService,
               public router: Router) { }
 
-  public ms = new MilestoneMaker( this.title, this.days, this.daysBool, this.startDate, this.endDate, 0 );
+  public ms = new MilestoneMaker( this.id, this.title, this.days, this.daysBool, this.startDate, this.endDate, 0 );
 
   freqCheck() {
     this.daysBool[0] = this.mon;
@@ -47,18 +48,16 @@ export class NewmilestoneComponent implements OnInit {
     }
   }
 
-  // freqcheckString() {
-  //   for (let i = 0; i < this.days.length; i++) {
-  //     this.ms.days[i] = 0;
-  //   }
-  // }
-  //
+  assignNumber() {
+    this.ms.id = this.msStore.milestones.length;
+  }
 
   saveMilestone() {
     this.freqCheck();
+    this.assignNumber();
     if (this.title === '') {
       alert('A name for the milestone is required.');
-      this.days=[];
+      this.days = [];
       return 0;
     }
     // date input should not be empy
@@ -74,7 +73,7 @@ export class NewmilestoneComponent implements OnInit {
       this.days=[];
       return 0;
     }
-    
+
     let starting = new Date(this.startDate);
     let ending = new Date(this.endDate);
     
@@ -98,20 +97,17 @@ export class NewmilestoneComponent implements OnInit {
       return 0;
     }
 
-
-
-    
     if ( !(this.daysBool[0] || this.daysBool[1] || this.daysBool[2] || this.daysBool[3] || this.daysBool[4] || this.daysBool[5] || this.daysBool[6]) ) {
       alert('Choose a day to work on the task.');
       this.days=[];
       return 0;
     }
     if (this.email === '') {
-      alert("Enter the email you'd like to be alerted to.")
+      alert('Enter the email you\'d like to be alerted to.');
       this.days=[];
       return 0;
     }
-    
+
     console.log(this.email)
 
 
@@ -119,7 +115,6 @@ export class NewmilestoneComponent implements OnInit {
     this.ms.days = this.days;
     this.ms.startDate = this.startDate;
     this.ms.endDate = this.endDate;
-    //console.log(this.ms);
     this.msStore.addmilestone(this.ms);
     this.router.navigate(['/dashboard']);
   }
@@ -128,7 +123,14 @@ export class NewmilestoneComponent implements OnInit {
     this.days = [];
     this.router.navigate(['/dashboard']);
   }
+
+  mockupData() {
+    this.ms = new MilestoneMaker(1, 'water', ['tue', 'sat'], [], '2018-02-17', '2018-02-26', 0);
+    this.saveMilestone();
+  }
+
   ngOnInit() {
+
   }
 
 }
