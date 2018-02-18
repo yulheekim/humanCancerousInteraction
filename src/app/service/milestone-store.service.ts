@@ -14,7 +14,23 @@ export class MilestoneStoreService {
     // return this.calendarMilestoneName;
   }
 
+  indexChecker(ms) {
+    if (ms.id === 0) {
+      return;
+    }
+    // check for empty spaces in array
+    for (let i = 0; i < this.milestones.length; i++) {
+      if (this.milestones[i] === null) {
+        ms.id = i;
+      }
+    }
+    // if (this.milestones[this.milestones.length] !== null) {
+    //   ms.id++;
+    // }
+  }
+
   addmilestone(ms) {
+    this.indexChecker(ms);
     this.milestones.push(ms);
   }
 
