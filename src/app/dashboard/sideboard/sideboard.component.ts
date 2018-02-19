@@ -13,7 +13,7 @@ export class SideboardComponent implements OnInit {
   // shouldDo = false;
 
   // returns the weekday as a number
-  public today = new Date().getDay() - 1; //5= saturday
+  public today = new Date().getDay(); //5= saturday
 
 
   constructor(public msStore: MilestoneStoreService) { }
