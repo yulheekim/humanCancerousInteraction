@@ -33,6 +33,7 @@ import { MilestoneStoreService } from './service/milestone-store.service';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './core/auth.service';
 import { AuthGuard } from './core/auth.guard';
+import { CalendarcolorService} from './service/calendarcolor.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { AuthGuard } from './core/auth.guard';
     AngularFireAuthModule,
     CoreModule,
   ],
-  providers: [MilestoneStoreService, AuthService, AuthGuard],
+  providers: [MilestoneStoreService, AuthService, AuthGuard, CalendarcolorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

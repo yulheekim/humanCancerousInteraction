@@ -24,6 +24,7 @@ export class NewmilestoneComponent implements OnInit {
   startDate = '';
   endDate = '';
   dayseum = {0: 'sun', 1: 'mon', 2: 'tue', 3: 'wed', 4: 'thurs', 5: 'fri', 6: 'sat'};
+  email = '';
   today = new Date();
 
   constructor(public msStore: MilestoneStoreService,
