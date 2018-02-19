@@ -13,7 +13,7 @@ export class SideboardComponent implements OnInit {
   // shouldDo = false;
 
   // returns the weekday as a number
-  public today = new Date().getDay() - 1; //5= saturday
+  public today = new Date().getDay(); //5= saturday
 
 
   constructor(public msStore: MilestoneStoreService) { }
@@ -38,7 +38,6 @@ export class SideboardComponent implements OnInit {
 
   ngOnInit() {
     this.doChekcer();
-    console.log(this.today);
     // for (let j = 0; j < this.msStoreList.length; j++) {
     //   if (this.msStoreList[j].days.length !== 0) {
     //     for (let i = 0; i < this.msStoreList[j].daysBool.length; i++) {
