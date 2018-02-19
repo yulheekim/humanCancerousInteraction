@@ -1,5 +1,8 @@
 <section class="mat-typography">
-<mat-toolbar id="header">New Year Resolution</mat-toolbar>
+<mat-toolbar id="header">
+  New Year Resolution
+  <button mat-button (click)="logout()">Logout</button>
+</mat-toolbar>
 <div id="container">
   <div id="msContainer">
     <app-milestone-list></app-milestone-list>
