@@ -18,6 +18,7 @@ import { routes } from './routes';
 
 // services
 import { MilestoneStoreService } from './service/milestone-store.service';
+import { CalendarcolorService} from './service/calendarcolor.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { MilestoneStoreService } from './service/milestone-store.service';
     MatListModule,
     routes,
   ],
-  providers: [MilestoneStoreService],
+  providers: [MilestoneStoreService, CalendarcolorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

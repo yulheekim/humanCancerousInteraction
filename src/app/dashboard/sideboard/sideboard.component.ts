@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MilestoneStoreService } from '../../service/milestone-store.service';
 import { Milestone } from '../../model/milestone';
+import { CalendarcolorService } from '../../service/calendarcolor.service';
+
 
 @Component({
   selector: 'app-sideboard',
@@ -13,10 +15,11 @@ export class SideboardComponent implements OnInit {
   // shouldDo = false;
 
   // returns the weekday as a number
-  public today = new Date().getDay() - 1; //5= saturday
+  public today = new Date().getDay(); //5= saturday
 
 
-  constructor(public msStore: MilestoneStoreService) { }
+  constructor(public msStore: MilestoneStoreService,
+              public calColor: CalendarcolorService) { }
 
   doChekcer() {
     for (let i = 0; i < this.msStoreList.length; i++) {
@@ -29,16 +32,22 @@ export class SideboardComponent implements OnInit {
 
   complete() {
     document.getElementById("milestone_box").style['background-color'] = "limegreen";
-
+    document.getElementById("yes_btn").style.display = "none";
+    document.getElementById("no_btn").style.display = "none";
+    document.getElementById("milestone_box").style.width = "8rem";
+    this.calColor.complete();
   }
 
   incomplete() {
     document.getElementById("milestone_box").style['background-color'] = "tomato";
+    document.getElementById("yes_btn").style.display = "none";
+    document.getElementById("no_btn").style.display = "none";
+    document.getElementById("milestone_box").style.width = "8rem";
+    this.calColor.incomplete();
   }
 
   ngOnInit() {
     this.doChekcer();
-    console.log(this.today);
     // for (let j = 0; j < this.msStoreList.length; j++) {
     //   if (this.msStoreList[j].days.length !== 0) {
     //     for (let i = 0; i < this.msStoreList[j].daysBool.length; i++) {
