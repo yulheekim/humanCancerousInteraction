@@ -15,7 +15,7 @@ export class SideboardComponent implements OnInit {
   // shouldDo = false;
 
   // returns the weekday as a number
-  public today = new Date().getDay(); //5= saturday
+  public today = new Date().getDay(); // 5 = saturday
 
 
   constructor(public msStore: MilestoneStoreService,
@@ -30,19 +30,20 @@ export class SideboardComponent implements OnInit {
   }
 
 
-  complete() {
-    document.getElementById("milestone_box").style['background-color'] = "limegreen";
-    document.getElementById("yes_btn").style.display = "none";
-    document.getElementById("no_btn").style.display = "none";
-    document.getElementById("milestone_box").style.width = "8rem";
+  complete(i) {
+    document.getElementById('milestone-box-'+`${i}`).style['background-color'] = 'limegreen';
+    document.getElementById('yes-btn-'+`${i}` ).style.display = 'none';
+    document.getElementById('no-btn-'+`${i}`).style.display = 'none';
+    document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     this.calColor.complete();
+    console.log(i);
   }
 
-  incomplete() {
-    document.getElementById("milestone_box").style['background-color'] = "tomato";
-    document.getElementById("yes_btn").style.display = "none";
-    document.getElementById("no_btn").style.display = "none";
-    document.getElementById("milestone_box").style.width = "8rem";
+  incomplete(i) {
+    document.getElementById('milestone-box-'+`${i}`).style['background-color'] = 'tomato';
+    document.getElementById('yes-btn-'+`${i}`).style.display = 'none';
+    document.getElementById('no-btn-'+`${i}`).style.display = 'none';
+    document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     this.calColor.incomplete();
   }
 

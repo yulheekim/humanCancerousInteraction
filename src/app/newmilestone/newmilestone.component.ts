@@ -79,12 +79,10 @@ export class NewmilestoneComponent implements OnInit {
 
     if ( (this.today.getDate() == starting.getDate()) ) {}
     else if ((this.today.getTime() > starting.getTime())) {
-      alert("Can't be Goku and go back in time u putty mofo.");
+      alert('Starting cannot be in past');
       this.days=[];
       return 0;
     }
-
-
 
     if ( this.today.getTime() > ending.getTime() ) {
       alert("Can't be done before today.");
