@@ -16,7 +16,7 @@ export class MilestoneListComponent implements OnInit {
 
   constructor(public msStore: MilestoneStoreService,
               public router: Router) { }
-  
+
 
   deletemilestone(ms) {
     return this.msStore.deletemilestone(ms);
@@ -25,6 +25,8 @@ export class MilestoneListComponent implements OnInit {
   emitMilestone(ms) {
     this.msStore.calendarMilestone = ms;
     this.msStore.getDisplayName();
+    console.log(ms);
+    console.log(this.msStoreList);
   }
 
   editmilestone(ms) {
