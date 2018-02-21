@@ -54,7 +54,6 @@ export class NewmilestoneComponent implements OnInit {
 
   saveMilestone() {
     this.freqCheck();
-    this.assignNumber();
     if (this.title === '') {
       alert('A name for the milestone is required.');
       this.days = [];
@@ -109,6 +108,7 @@ export class NewmilestoneComponent implements OnInit {
     this.ms.days = this.days;
     this.ms.startDate = this.startDate;
     this.ms.endDate = this.endDate;
+    this.ms.daysBool = this.daysBool;
     this.msStore.addmilestone(this.ms);
     this.router.navigate(['/dashboard']);
   }
@@ -122,12 +122,26 @@ export class NewmilestoneComponent implements OnInit {
     this.ms = new MilestoneMaker(1, 'water', ['tue', 'sat'], [], '2018-02-17', '2018-02-26', 0);
     this.saveMilestone();
   }
+  prepopulateFields(ms) {
+    this.title = ms.name;
+    this.startDate = ms.startDate;
+    this.endDate = ms.endDate;
+    this.sun = ms.daysBool[0];
+    this.mon = ms.daysBool[1];
+    this.tue = ms.daysBool[2];
+    this.wed = ms.daysBool[3];
+    this.thurs = ms.daysBool[4];
+    this.fri = ms.daysBool[5];
+    this.sat = ms.daysBool[6];
+    this.ms.id = ms.id;
+  }
 
   ngOnInit() {
     if(this.msStore.editdecide) {
-      console.log('ahung');
       this.msStore.editdecide = false;
-      console.log(this.msStore.editdecide);
+      this.prepopulateFields(this.msStore.tempms);
+    }else {
+      this.assignNumber();
     }
   }
 

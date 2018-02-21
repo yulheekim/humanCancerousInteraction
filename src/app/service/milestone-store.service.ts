@@ -15,10 +15,6 @@ export class MilestoneStoreService {
     // return this.calendarMilestoneName;
   }
 
-  tempstoremilestone(ms) {
-    this.tempms = ms;
-  }
-
   indexChecker(ms) {
     if (ms.id === 0) {
       return;
@@ -28,7 +24,7 @@ export class MilestoneStoreService {
       if (this.milestones[i] === null) {
         ms.id = i;
         return;
-      }
+      } 
     }
   }
 
@@ -39,13 +35,13 @@ export class MilestoneStoreService {
 
   deletemilestone(ms) {
     for (let i = 0; i < this.milestones.length; i++) {
-      if(ms.id == this.milestones[i].id) {
+      if(ms.id === this.milestones[i].id) {
         this.milestones[i] = null;
         return;
       }
     }
   }
-  
+
   editmilestone() {
     this.editdecide = true;
   }

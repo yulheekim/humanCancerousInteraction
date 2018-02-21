@@ -28,8 +28,9 @@ export class MilestoneListComponent implements OnInit {
   }
 
   editmilestone(ms) {
+    this.msStore.editdecide = true;
+    this.msStore.tempms = ms;
     this.router.navigate(['/newmilestone']);
-    console.log("end");
   }
 
   ngOnInit() {
