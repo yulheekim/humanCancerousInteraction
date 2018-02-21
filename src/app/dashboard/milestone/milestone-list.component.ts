@@ -26,6 +26,10 @@ export class MilestoneListComponent implements OnInit {
     this.msStore.calendarMilestone = ms;
     this.msStore.getDisplayName();
     console.log(ms);
+    this.msStore.obs_milestones.subscribe(((val) => {
+      console.log(val);
+      this.msStoreList = val;
+    }))
     console.log(this.msStoreList);
   }
 
@@ -35,6 +39,11 @@ export class MilestoneListComponent implements OnInit {
     this.router.navigate(['/newmilestone']);
   }
 
+  get_milestone() {
+    this.msStoreList = this.msStore.milestones;
+  }
+
   ngOnInit() {
+    this.get_milestone();
   }
 }
