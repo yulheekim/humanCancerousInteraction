@@ -25,8 +25,6 @@ export class MilestoneListComponent implements OnInit {
   emitMilestone(ms) {
     this.msStore.calendarMilestone = ms;
     this.msStore.getDisplayName();
-    console.log(ms);
-    console.log(this.msStoreList);
   }
 
   editmilestone(ms) {

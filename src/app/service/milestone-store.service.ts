@@ -17,10 +17,8 @@ export class MilestoneStoreService {
 
   array_sorter() {
     const new_arr = this.milestones.filter(function(n) { return n !== null; });
-    console.log('arr_sorter: ' + new_arr.length);
     for (let i = 0; i < new_arr.length; i++) {
       new_arr[i].id = i;
-      console.log('index reassigned');
     }
     this.milestones = new_arr;
   }
@@ -34,7 +32,6 @@ export class MilestoneStoreService {
       this.milestones.push(ms);
     }
     this.array_sorter();
-    console.log(this.milestones);
   }
 
   deletemilestone(ms) {
@@ -45,10 +42,6 @@ export class MilestoneStoreService {
       }
     }
     this.array_sorter();
-  }
-
-  editmilestone() {
-    this.editdecide = true;
   }
 
   constructor() { }
