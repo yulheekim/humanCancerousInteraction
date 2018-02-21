@@ -45,7 +45,6 @@ export class MilestoneStoreService {
       this.milestones.push(ms);
     }
     this.array_sorter(this.milestones);
-    console.log(this.milestones);
   }
 
   deletemilestone(ms) {
@@ -58,10 +57,6 @@ export class MilestoneStoreService {
       console.log('broke');
     }
     this.array_sorter(this.milestones);
-  }
-
-  editmilestone() {
-    this.editdecide = true;
   }
 
   constructor() { }
