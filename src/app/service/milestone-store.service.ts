@@ -7,28 +7,41 @@ export class MilestoneStoreService {
   milestones: Milestone[] = [];
   calendarMilestone: Milestone;
   calendarMilestoneName = '';
+  tempms: Milestone = null;
+  editdecide = false;
 
   getDisplayName() {
     this.calendarMilestoneName = this.calendarMilestone.name;
     // return this.calendarMilestoneName;
   }
 
-  indexChecker(ms) {
-    if (ms.id === 0) {
-      return;
+  array_sorter() {
+    const new_arr = this.milestones.filter(function(n) { return n !== null; });
+    for (let i = 0; i < new_arr.length; i++) {
+      new_arr[i].id = i;
     }
-    // check for empty spaces in array
-    for (let i = 0; i < this.milestones.length; i++) {
-      if (this.milestones[i] === null) {
-        ms.id = i;
-        return;
-      }
-    }
+    this.milestones = new_arr;
   }
 
   addmilestone(ms) {
-    this.indexChecker(ms);
-    this.milestones.push(ms);
+    // this.indexChecker(ms);
+    if (this.milestones[ms.id] !== null) {
+      this.milestones[ms.id] = ms;
+    } else {
+      // this.array_sorter();
+      this.milestones.push(ms);
+    }
+    this.array_sorter();
+  }
+
+  deletemilestone(ms) {
+    for (let i = 0; i < this.milestones.length; i++) {
+      if (ms.id === this.milestones[i].id) {
+        this.milestones[i] = null;
+        return;
+      }
+    }
+    this.array_sorter();
   }
 
   constructor() { }

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonToggleModule, MatProgressBarModule, MatButtonModule, MatNativeDateModule, MatFormFieldModule, MatInputModule,
-          MatRadioModule, MatCheckboxModule, MatListModule } from '@angular/material';
+          MatRadioModule, MatCheckboxModule, MatListModule, MatDividerModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatMenuModule} from '@angular/material/menu';
@@ -33,6 +33,7 @@ import { MilestoneStoreService } from './service/milestone-store.service';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './core/auth.service';
 import { AuthGuard } from './core/auth.guard';
+import { CalendarcolorService} from './service/calendarcolor.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { AuthGuard } from './core/auth.guard';
     AngularFireAuthModule,
     CoreModule,
   ],
-  providers: [MilestoneStoreService, AuthService, AuthGuard],
+  providers: [MilestoneStoreService, AuthService, AuthGuard, CalendarcolorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

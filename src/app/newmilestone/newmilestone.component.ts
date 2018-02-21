@@ -24,6 +24,7 @@ export class NewmilestoneComponent implements OnInit {
   startDate = '';
   endDate = '';
   dayseum = {0: 'sun', 1: 'mon', 2: 'tue', 3: 'wed', 4: 'thurs', 5: 'fri', 6: 'sat'};
+  email = '';
   today = new Date();
 
   constructor(public msStore: MilestoneStoreService,
@@ -53,7 +54,6 @@ export class NewmilestoneComponent implements OnInit {
 
   saveMilestone() {
     this.freqCheck();
-    this.assignNumber();
     if (this.title === '') {
       alert('A name for the milestone is required.');
       this.days = [];
@@ -78,12 +78,10 @@ export class NewmilestoneComponent implements OnInit {
 
     if ( (this.today.getDate() == starting.getDate()) ) {}
     else if ((this.today.getTime() > starting.getTime())) {
-      alert("Can't be Goku and go back in time u putty mofo.");
+      alert('Starting cannot be in past');
       this.days=[];
       return 0;
     }
-
-
 
     if ( this.today.getTime() > ending.getTime() ) {
       alert("Can't be done before today.");
@@ -102,14 +100,11 @@ export class NewmilestoneComponent implements OnInit {
       return 0;
     }
 
-
-
-
-
     this.ms.name = this.title;
     this.ms.days = this.days;
     this.ms.startDate = this.startDate;
     this.ms.endDate = this.endDate;
+    this.ms.daysBool = this.daysBool;
     this.msStore.addmilestone(this.ms);
     this.router.navigate(['/dashboard']);
   }
@@ -124,8 +119,27 @@ export class NewmilestoneComponent implements OnInit {
     this.saveMilestone();
   }
 
-  ngOnInit() {
+  prepopulateFields(ms) {
+    this.title = ms.name;
+    this.startDate = ms.startDate;
+    this.endDate = ms.endDate;
+    this.sun = ms.daysBool[0];
+    this.mon = ms.daysBool[1];
+    this.tue = ms.daysBool[2];
+    this.wed = ms.daysBool[3];
+    this.thurs = ms.daysBool[4];
+    this.fri = ms.daysBool[5];
+    this.sat = ms.daysBool[6];
+    this.ms.id = ms.id;
+  }
 
+  ngOnInit() {
+    if(this.msStore.editdecide) {
+      this.msStore.editdecide = false;
+      this.prepopulateFields(this.msStore.tempms);
+    }else {
+      this.assignNumber();
+    }
   }
 
 }

@@ -84,7 +84,7 @@ body {font-family: Verdana, sans-serif;}
     padding: 5px;
     background: white;
     border-radius: 50%;
-    color: #777 !important
+    color: black; 
 }
 
 /* Add media queries for smaller screens */

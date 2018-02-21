@@ -27,6 +27,7 @@ export class CalendarcolorService {
     const d = new Date();
     document.getElementById(d.getDate().toString()).classList.add('active');
     document.getElementById(d.getDate().toString()).style['background-color'] = "tomato";
+    document.getElementById(d.getDate().toString()).style['color'] = "white";
   }
 
   constructor() { }

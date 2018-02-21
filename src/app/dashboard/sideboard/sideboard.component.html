@@ -1,12 +1,12 @@
 <div id="pannel">
-  <mat-list *ngFor="let ms of msStoreList" >
-  <div class="btnContainer" *ngIf="ms.shouldDo === true">
-    <div class="milestone" id="milestone_box">
+  <mat-list *ngFor="let ms of msStoreList let i = index">
+  <div class="btnContainer" *ngIf="ms !== null && ms.shouldDo === true">
+    <div class="milestone" id="milestone-box-{{i}}">
       {{ms.name}}
     </div>
     <div class="checkBtn">
-      <button mat-mini-fab class="yesBtn" (click)="complete()">Yes</button>
-          <button mat-mini-fab class="noBtn" (click)="incomplete()">No</button>
+      <button mat-mini-fab id="yes-btn-{{i}}" class="yesBtn" (click)="complete(i)">Yes</button>
+          <button mat-mini-fab id="no-btn-{{i}}" class="noBtn" (click)="incomplete(i)">No</button>
     </div>
   </div>
   </mat-list>
