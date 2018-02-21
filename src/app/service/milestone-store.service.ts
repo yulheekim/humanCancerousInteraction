@@ -7,6 +7,8 @@ export class MilestoneStoreService {
   milestones: Milestone[] = [];
   calendarMilestone: Milestone;
   calendarMilestoneName = '';
+  tempms: Milestone = null;
+  editdecide=false;
 
   getDisplayName() {
     this.calendarMilestoneName = this.calendarMilestone.name;
@@ -22,13 +24,26 @@ export class MilestoneStoreService {
       if (this.milestones[i] === null) {
         ms.id = i;
         return;
-      }
+      } 
     }
   }
 
   addmilestone(ms) {
     this.indexChecker(ms);
     this.milestones.push(ms);
+  }
+
+  deletemilestone(ms) {
+    for (let i = 0; i < this.milestones.length; i++) {
+      if(ms.id === this.milestones[i].id) {
+        this.milestones[i] = null;
+        return;
+      }
+    }
+  }
+
+  editmilestone() {
+    this.editdecide = true;
   }
 
   constructor() { }
