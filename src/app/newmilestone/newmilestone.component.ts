@@ -124,7 +124,11 @@ export class NewmilestoneComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    if(this.msStore.editdecide) {
+      console.log('ahung');
+      this.msStore.editdecide = false;
+      console.log(this.msStore.editdecide);
+    }
   }
 
 }
