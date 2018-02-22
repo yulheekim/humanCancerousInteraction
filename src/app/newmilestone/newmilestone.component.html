@@ -1,45 +1,70 @@
 <section class="mat-typography">
   <mat-toolbar id="header">Milestone Add Page</mat-toolbar>
+  <div id = "title">
+    <div id = "categorydiv">
+      <select id="category">
+    <!-- This method is nice because it doesn't require extra div tags, but it also doesn't retain the style across all browsers. -->
+        <option>Select an Option</option>
+        <option>Option 1</option>
+        <option>Option 2</option>
+      </select>
+    </div>
+
+
+
+    <mat-form-field id = "title_input">
+      <input matInput placeholder="Title: " [(ngModel)]="title" required>
+    </mat-form-field>
+  </div>
+
   <div id="container">
-  <div id="leftContainer">
-    <mat-form-field>
-      <input matInput placeholder="name of the milestone" [(ngModel)]="title" required>
-    </mat-form-field>
-    <p>{{title}}</p>
-    <mat-form-field>
-      <input matInput [matDatepicker]="spicker" placeholder="Start Date" [(ngModel)]="startDate" required>
-      <mat-datepicker-toggle matSuffix [for]="spicker"></mat-datepicker-toggle>
-      <mat-datepicker #spicker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [matDatepicker]="epicker" placeholder="End Date" [(ngModel)]="endDate" required>
-      <mat-datepicker-toggle matSuffix [for]="epicker"></mat-datepicker-toggle>
-      <mat-datepicker #epicker></mat-datepicker>
-    </mat-form-field>
+    <div id="leftContainer">
+      <div id = "date">
+        <mat-form-field>
+          <input matInput [matDatepicker]="spicker" placeholder="Start Date" [(ngModel)]="startDate" required>
+          <mat-datepicker-toggle matSuffix [for]="spicker"></mat-datepicker-toggle>
+          <mat-datepicker #spicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="epicker" placeholder="End Date" [(ngModel)]="endDate" required>
+          <mat-datepicker-toggle matSuffix [for]="epicker"></mat-datepicker-toggle>
+          <mat-datepicker #epicker></mat-datepicker>
+        </mat-form-field>
+      </div>
 
   <div>
-    <h1>Days to Work on Milestone</h1>
-    <form name="weekdays">
-      <mat-checkbox value="Mon" name="monday" [(ngModel)]="mon">Monday</mat-checkbox>
-      <mat-checkbox value="Tue" name="tuesday" [(ngModel)]="tue">Tuesday</mat-checkbox>
-      <mat-checkbox value="Wed" name="wednesday" [(ngModel)]="wed">Wednesday</mat-checkbox>
-      <mat-checkbox value="Thur" name="thursday" [(ngModel)]="thurs">Thursday</mat-checkbox>
-      <mat-checkbox value="Fri" name="friday" [(ngModel)]="fri">Friday</mat-checkbox>
-      <mat-checkbox value="Sat" name="saturday" [(ngModel)]="sat">Saturday</mat-checkbox>
-      <mat-checkbox value="sun" name="sunday" [(ngModel)]="sun">Sunday</mat-checkbox>
-    </form>
-  </div>
-  </div>
-  <div id="rightintheputty">
-    <h1>Alert Email</h1>
-    <input mat-input placeholder='right in the putty.exe' [(ngModel)]="email">
+    <div id = "days-h">
+      <h1>Days to Work on Milestone</h1>
+    </div>
+
+    <div id = "days">
+      <form name="weekdays">
+        <mat-checkbox value="Mon" name="monday" [(ngModel)]="mon">Monday</mat-checkbox>
+        <mat-checkbox value="Tue" name="tuesday" [(ngModel)]="tue">Tuesday</mat-checkbox>
+        <mat-checkbox value="Wed" name="wednesday" [(ngModel)]="wed">Wednesday</mat-checkbox>
+        <mat-checkbox value="Thur" name="thursday" [(ngModel)]="thurs">Thursday</mat-checkbox>
+        <mat-checkbox value="Fri" name="friday" [(ngModel)]="fri">Friday</mat-checkbox>
+        <mat-checkbox value="Sat" name="saturday" [(ngModel)]="sat">Saturday</mat-checkbox>
+        <mat-checkbox value="sun" name="sunday" [(ngModel)]="sun">Sunday</mat-checkbox>
+      </form>
+    </div>
   </div>
   </div>
 
-  <button mat-button (click)="saveMilestone()">
-    save
-  </button>
-  <button mat-button (click)="cancel()">
-    cancel
-  </button>
+  <div id="rightintheputty">
+    <h1>Alert Email</h1>
+    <input mat-input placeholder='email: ' [(ngModel)]="email">
+  </div>
+
+  <div id="save">
+    <button mat-button (click)="saveMilestone()">
+      save
+    </button>
+    <button mat-button (click)="cancel()">
+      cancel
+    </button>
+  </div>
+  </div>
+
+
 </section>

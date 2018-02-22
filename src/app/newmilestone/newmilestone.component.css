@@ -1,4 +1,80 @@
-#header {
-  background-color: darkgrey;
+#container{
+  height: auto;
+  width: 100%;
 }
 
+#header {
+  background-color: dimgrey;
+  color: lightgrey;
+  font-weight: lighter;
+}
+
+#title{
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+
+#rightintheputty{
+  background-color: Thistle ;
+  float: right;
+  width: 45%;
+  margin-top: 5%;
+  padding: 20px;
+  height: 300px;
+}
+
+#leftContainer{
+  background-color: Thistle ;
+  float:left;
+  width: 45%;
+  margin-top: 5%;
+  padding: 20px;
+  height: 300px;
+}
+
+#save{
+  float: right;
+  margin-top: 40px;
+}
+
+#title_input{
+  outline-style: solid;
+  outline-color: lightgrey;
+  outline-width: thin;
+
+  margin-top: 13px;
+  width: 85%;
+  height: 60px;
+  padding-left: 15px;
+  font-size: 25px;
+  float: right;
+  vertical-align: middle;
+}
+
+
+::ng-deep .mat-input-underline {
+    display: none;
+}
+
+#days{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#days-h{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+#category {
+   color: dimgrey;
+   height: 60px;
+   padding-left: 15px;
+   width: 100%;
+}
+
+#categorydiv{
+   margin-top: 15px;
+   float: left;
+   width: 10%;
+}
