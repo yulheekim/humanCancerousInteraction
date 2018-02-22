@@ -36,6 +36,7 @@ export class AuthService {
   }
 
   private oAuthLogin(provider) {
+    // return this.afAuth.auth.signInWithRedirect(provider)
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.router.navigate(['/dashboard']);
