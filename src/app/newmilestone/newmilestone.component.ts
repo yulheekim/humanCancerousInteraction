@@ -24,6 +24,7 @@ export class NewmilestoneComponent implements OnInit {
   startDate = '';
   endDate = '';
   dayseum = {0: 'sun', 1: 'mon', 2: 'tue', 3: 'wed', 4: 'thurs', 5: 'fri', 6: 'sat'};
+
   email = '';
   today = new Date();
 
@@ -48,6 +49,7 @@ export class NewmilestoneComponent implements OnInit {
     }
   }
 
+
   assignNumber() {
     this.ms.id = this.msStore.milestones.length;
   }
@@ -66,6 +68,59 @@ export class NewmilestoneComponent implements OnInit {
       this.days=[];
       return 0;
     }
+
+    // make sure start date to end date includes the days you picked to work.
+
+    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var daysi = ['sun', 'mon', 'tue', 'wed', 'thurs', 'fri','sat'];
+    var startDayStr = String(this.startDate).split(" ", 1)[0];
+    var endDayStr = String(this.endDate).split(" ", 1)[0];
+
+    if (this.endDate.getDate() - this.startDate.getDate() < 6){
+      if (days.indexOf(startDayStr) < days.indexOf(endDayStr)){
+        var term = [];
+        for (var i = days.indexOf(startDayStr); i <= days.indexOf(endDayStr); i++){
+          term.push(i);
+        }
+        for (let i of this.days){
+          var check = daysi.indexOf(i);
+          if (term.indexOf(check) == -1){
+            alert('Check the days you want to work.');
+            this.days = [];
+            return 0;
+          }
+        }
+      }
+      else if (days.indexOf(startDayStr) > days.indexOf(endDayStr)){
+        var term = [];
+        for (var i = days.indexOf(endDayStr) +1; i < days.indexOf(startDayStr); i++){
+          term.push(i);
+        }
+        for (let i of this.days){
+          var check = daysi.indexOf(i);
+          if (term.indexOf(check) != -1){
+            alert('Check the days you want to work.');
+            this.days = []
+            return 0;
+          }
+        }
+      }
+      else{
+        console.log("case3");
+        for(let i of this.days) {
+          var check = daysi.indexOf(i);
+          if (check != days.indexOf(startDayStr)) {
+            alert('Check the days you want to work.');
+            this.days = [];
+            return 0;
+          }
+        }
+      }
+    }
+
+
+
+
     // date should be in date format
     if ( !(isDate(this.startDate) && isDate(this.endDate)) ) {
       alert('Choose a date.');
