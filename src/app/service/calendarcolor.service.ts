@@ -27,7 +27,7 @@ export class CalendarcolorService {
        document.getElementById(`${i}`).classList.remove('active');
       }
     }
-    for (let i = 1; i < ms.endDate; i++) {
+    for (let i = 1; i < new Date(ms.endDate).getDate(); i++) {
       if (ms.calender[i] === 1) {
         document.getElementById(`${i}`).classList.add('active');
       } else if (ms.calender[i] === 2) {

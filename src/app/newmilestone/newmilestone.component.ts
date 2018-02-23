@@ -122,7 +122,7 @@ export class NewmilestoneComponent implements OnInit {
           let check = daysi.indexOf(i);
           if (term.indexOf(check) !== -1) {
             alert('Check the days you want to work.');
-            this.days = []
+            this.days = [];
             return 0;
           }
         }
@@ -173,8 +173,8 @@ export class NewmilestoneComponent implements OnInit {
 
     this.ms.name = this.title;
     this.ms.days = this.days;
-    this.ms.startDate = starting.getDate().toString();
-    this.ms.endDate = ending.getDate().toString();
+    this.ms.startDate = starting.toString();
+    this.ms.endDate = ending.toString();
     this.ms.daysBool = this.daysBool;
     this.msStore.addmilestone(this.ms);
     this.router.navigate(['/dashboard']);
@@ -216,4 +216,5 @@ export class NewmilestoneComponent implements OnInit {
       this.init_days_to_work();
     }
   }
+
 }
