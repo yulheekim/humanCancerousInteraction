@@ -15,10 +15,12 @@ export class SideboardComponent implements OnInit {
 
   // returns the weekday as a number
   public today = new Date().getDay(); // 5 = saturday
+  public today_date = new Date().getDate();
 
 
   constructor(public msStore: MilestoneStoreService,
               public calColor: CalendarcolorService) { }
+
 
   doChecker() {
     for (let i = 0; i < this.msStoreList.length; i++) {
@@ -33,9 +35,13 @@ export class SideboardComponent implements OnInit {
     document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     document.getElementById('yes-btn-'+`${i}` ).style.display = 'none';
     document.getElementById('no-btn-'+`${i}`).style.display = 'none';
+    console.log(this.msStore);
+    console.log(this.today_date);
+    // this.msStore.obs_milestones.subscribe(((val) => {
+    //   this.msStoreList = val;
+    // }));
+    this.msStoreList[i].calender[this.today_date] = 2;
     this.calColor.complete();
-    console.log(this.today);
-    this.msStore[i].calender[this.today] = 2;
   }
 
   incomplete(i) {
@@ -43,12 +49,13 @@ export class SideboardComponent implements OnInit {
     document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     document.getElementById('yes-btn-'+`${i}`).style.display = 'none';
     document.getElementById('no-btn-'+`${i}`).style.display = 'none';
+    console.log(this.today_date);
+    this.msStoreList[i].calender[this.today_date] = 3;
     this.calColor.incomplete();
-    console.log(this.today);
-    this.msStore[i].calender[this.today] = 3;
   }
 
   ngOnInit() {
+    this.doChecker();
   }
 
 }

@@ -173,8 +173,8 @@ export class NewmilestoneComponent implements OnInit {
 
     this.ms.name = this.title;
     this.ms.days = this.days;
-    this.ms.startDate = starting.getDate().toString();
-    this.ms.endDate = ending.getDate().toString();
+    this.ms.startDate = starting.toString();
+    this.ms.endDate = ending.toString();
     this.ms.daysBool = this.daysBool;
     this.msStore.addmilestone(this.ms);
     this.router.navigate(['/dashboard']);
