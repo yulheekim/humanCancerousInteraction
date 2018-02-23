@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Milestone } from '../../model/milestone';
+import { Calendar } from '../../model/calendar';
 import { MilestoneStoreService } from '../../service/milestone-store.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -8,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
+
 export class CalendarComponent implements OnInit, AfterContentChecked {
   public milestonelist = this.msStore.milestones;
   public calendarMilestone = this.msStore.calendarMilestone;
@@ -26,6 +28,7 @@ export class CalendarComponent implements OnInit, AfterContentChecked {
 
   getColor(d) {
     document.getElementById(d.getDate().toString()).classList.add('active');
+
   }
 
 

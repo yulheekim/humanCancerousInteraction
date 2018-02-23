@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { CalendarComponent } from '../dashboard/calendar/calendar.component';
 import { SideboardComponent } from '../dashboard/sideboard/sideboard.component';
 import { Milestone } from '../model/milestone';
@@ -23,7 +24,7 @@ export class CalendarcolorService {
   update_days_to_work(ms) {
     for (let i = 1; i < 29; i++) {
       if (ms.calender[i] !== null) {
-        document.getElementById(`${i}`).classList.remove('active');
+       document.getElementById(`${i}`).classList.remove('active');
       }
     }
     for (let i = 1; i < ms.endDate; i++) {
