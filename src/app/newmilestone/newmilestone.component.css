@@ -12,8 +12,8 @@
 #leftContainer {
   width: 42%;
   height: 480px;
-  background-color: beige;
-  border-radius: 1rem;
+  background-color: #ccccff;
+  /* border-radius: 1rem; */
   margin: 4%;
   margin-bottom: 2rem;
   float: left;
@@ -22,8 +22,8 @@
 #rightContainer {
   width: 42%;
   height: 480px;
-  background-color: beige;
-  border-radius: 1rem;
+  background-color: #ccccff;
+  /* border-radius: 1rem; */
   margin-top: 4%;
   margin-bottom: 2rem;
   margin-right: 4%;
