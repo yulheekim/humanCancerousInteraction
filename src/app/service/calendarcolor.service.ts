@@ -30,6 +30,8 @@ export class CalendarcolorService {
       if (ms.calender[i] === 1) {
         document.getElementById(`${i}`).classList.add('active');
       } else if (ms.calender[i] === 2) {
+      //  TODO:
+      //  COLOR CHANGER
       //   document.getElementById(`${i}`).style['background-color'] = 'limegreen';
       // } else if (ms.calendar[i] === 3) {
       //   document.getElementById(`${i}`).style['background-color'] = 'tomato';
