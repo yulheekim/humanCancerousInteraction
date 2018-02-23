@@ -36,6 +36,5 @@ export class CalendarComponent implements OnInit, AfterContentChecked {
 
     const d = new Date();
     this.getColor(d);
-
   }
 }

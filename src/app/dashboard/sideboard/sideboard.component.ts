@@ -12,7 +12,6 @@ import { CalendarcolorService } from '../../service/calendarcolor.service';
 export class SideboardComponent implements OnInit {
   public msStoreList = this.msStore.milestones;
   checklist: number[] = [];
-  // shouldDo = false;
 
   // returns the weekday as a number
   public today = new Date().getDay(); // 5 = saturday
@@ -21,7 +20,7 @@ export class SideboardComponent implements OnInit {
   constructor(public msStore: MilestoneStoreService,
               public calColor: CalendarcolorService) { }
 
-  doChekcer() {
+  doChecker() {
     for (let i = 0; i < this.msStoreList.length; i++) {
       if (this.msStoreList[i].daysBool[this.today]) {
         this.msStoreList[i].shouldDo = true;
@@ -29,35 +28,27 @@ export class SideboardComponent implements OnInit {
     }
   }
 
-
   complete(i) {
     document.getElementById('milestone-box-'+`${i}`).style['background-color'] = 'limegreen';
+    document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     document.getElementById('yes-btn-'+`${i}` ).style.display = 'none';
     document.getElementById('no-btn-'+`${i}`).style.display = 'none';
-    document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     this.calColor.complete();
-    console.log(i);
+    console.log(this.today);
+    this.msStore[i].calender[this.today] = 2;
   }
 
   incomplete(i) {
     document.getElementById('milestone-box-'+`${i}`).style['background-color'] = 'tomato';
+    document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     document.getElementById('yes-btn-'+`${i}`).style.display = 'none';
     document.getElementById('no-btn-'+`${i}`).style.display = 'none';
-    document.getElementById('milestone-box-'+`${i}`).style.width = '8rem';
     this.calColor.incomplete();
+    console.log(this.today);
+    this.msStore[i].calender[this.today] = 3;
   }
 
   ngOnInit() {
-    this.doChekcer();
-    // for (let j = 0; j < this.msStoreList.length; j++) {
-    //   if (this.msStoreList[j].days.length !== 0) {
-    //     for (let i = 0; i < this.msStoreList[j].daysBool.length; i++) {
-    //       if (this.msStoreList[j].daysBool[i] === true) {
-    //         this.checklist.push(i);
-    //       }
-    //     }
-    //   }
-    // }
   }
 
 }
