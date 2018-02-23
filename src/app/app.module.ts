@@ -35,6 +35,8 @@ import { AuthService } from './core/auth.service';
 import { AuthGuard } from './core/auth.guard';
 import { CalendarcolorService} from './service/calendarcolor.service';
 
+import { CalendarModule } from 'angular-calendar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +71,7 @@ import { CalendarcolorService} from './service/calendarcolor.service';
     AngularFireStorageModule,
     AngularFireAuthModule,
     CoreModule,
+    CalendarModule.forRoot(),
   ],
   providers: [MilestoneStoreService, AuthService, AuthGuard, CalendarcolorService],
   bootstrap: [AppComponent]

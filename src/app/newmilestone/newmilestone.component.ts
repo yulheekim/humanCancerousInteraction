@@ -71,33 +71,36 @@ export class NewmilestoneComponent implements OnInit {
 
     // make sure start date to end date includes the days you picked to work.
 
-    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    var daysi = ['sun', 'mon', 'tue', 'wed', 'thurs', 'fri','sat'];
-    var startDayStr = String(this.startDate).split(" ", 1)[0];
-    var endDayStr = String(this.endDate).split(" ", 1)[0];
+    let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let daysi = ['sun', 'mon', 'tue', 'wed', 'thurs', 'fri','sat'];
+    let startDayStr = String(this.startDate).split(" ", 1)[0];
+    let endDayStr = String(this.endDate).split(" ", 1)[0];
 
-    if (this.endDate.getDate() - this.startDate.getDate() < 6){
+    let starting = new Date(this.startDate);
+    let ending = new Date(this.endDate);
+
+    if (ending.getDate() - starting.getDate() < 6){
       if (days.indexOf(startDayStr) < days.indexOf(endDayStr)){
-        var term = [];
-        for (var i = days.indexOf(startDayStr); i <= days.indexOf(endDayStr); i++){
+        let term = [];
+        for (let i = days.indexOf(startDayStr); i <= days.indexOf(endDayStr); i++){
           term.push(i);
         }
         for (let i of this.days){
-          var check = daysi.indexOf(i);
+          let check = daysi.indexOf(i);
           if (term.indexOf(check) == -1){
-            alert('Check the days you want to work.');
+            alert('Selected days are out of milestone duration range.');
             this.days = [];
             return 0;
           }
         }
       }
       else if (days.indexOf(startDayStr) > days.indexOf(endDayStr)){
-        var term = [];
-        for (var i = days.indexOf(endDayStr) +1; i < days.indexOf(startDayStr); i++){
+        let term = [];
+        for (let i = days.indexOf(endDayStr) +1; i < days.indexOf(startDayStr); i++){
           term.push(i);
         }
         for (let i of this.days){
-          var check = daysi.indexOf(i);
+          let check = daysi.indexOf(i);
           if (term.indexOf(check) != -1){
             alert('Check the days you want to work.');
             this.days = []
@@ -108,7 +111,7 @@ export class NewmilestoneComponent implements OnInit {
       else{
         console.log("case3");
         for(let i of this.days) {
-          var check = daysi.indexOf(i);
+          let check = daysi.indexOf(i);
           if (check != days.indexOf(startDayStr)) {
             alert('Check the days you want to work.');
             this.days = [];
@@ -127,9 +130,6 @@ export class NewmilestoneComponent implements OnInit {
       this.days=[];
       return 0;
     }
-
-    let starting = new Date(this.startDate);
-    let ending = new Date(this.endDate);
 
     if ( (this.today.getDate() == starting.getDate()) ) {}
     else if ((this.today.getTime() > starting.getTime())) {
