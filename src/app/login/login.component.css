@@ -24,21 +24,24 @@
 }
 
 img {
-  width: 45px;
-  height: 45px;
+  width: 32px;
+  height: 32px;
 }
+
 .title {
-  font-size: 2.7em;
+  font-size: 2.8em;
   margin-bottom: 0;
 }
 
 button {
   padding: 1.2em;
-  width: 55%;
+  width: 50%;
+  height: 80px;
   cursor: pointer;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  font-size: 1.3em;
+  margin-top: 4.5rem;
+  margin-bottom: 3rem;
+  font-size: 1.2em;
+  padding-top: 24px;
 }
 
 #pwInput {
